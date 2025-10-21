@@ -1,0 +1,29 @@
+# Configurações sensíveis
+config/database.php
+.env
+
+# Uploads de usuários
+public/uploads/*
+!public/uploads/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Cache
+cache/
+tmp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependências (se usar Composer futuramente)
+vendor/
+composer.lock
