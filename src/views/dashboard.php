@@ -16,7 +16,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="?page=dashboard">🏠 Dashboard</a>
                     </li>
@@ -33,6 +33,18 @@
                         <a class="nav-link" href="?page=calculator">🧮 Calculadora</a>
                     </li>
                 </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            👤 <?= AuthController::getUser()['name'] ?>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><span class="dropdown-item-text"><small><?= AuthController::getUser()['profession'] ?? 'Profissional' ?></small></span></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="?page=auth&action=logout">🚪 Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -42,6 +54,10 @@
         <div class="row">
             <div class="col-12">
                 <h1 class="mb-4">📊 Dashboard</h1>
+                <div class="alert alert-info">
+                    <strong>Bem-vindo, <?= AuthController::getUser()['name'] ?>!</strong> 
+                    Você está logado como <?= AuthController::getUser()['profession'] ?? 'Profissional' ?>.
+                </div>
             </div>
         </div>
 
